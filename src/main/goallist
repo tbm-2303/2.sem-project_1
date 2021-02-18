@@ -1,0 +1,6 @@
+- Velkommen. (1) Hvis du ikke er kunde, så opret en konto i vores bank. (2) Hvis du er kunde, så log ind på din konto.
+- Hvis man vælger at oprette en konto opretter man først en 'customer' og derefter bliver en konto oprettet og tilknyttet med
+0 kr på. Vi kommer til at skulle bruge en metode til at genere et random konto nr når vi opretter en ny konto.
+- lav indsæt og hæv først. skulle være simple nok.
+- lav overfør mellem konti.
+-
