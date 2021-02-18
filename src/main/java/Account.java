@@ -8,7 +8,7 @@ public class Account {
    private int account_balance;
    private String password;
    private String username;
-
+   private Customer customer;
    Bank thebankos = new Bank();
 
 
@@ -16,11 +16,16 @@ public class Account {
    public Account(Customer customer, String password, String username) {
       this.account_nr = account_nr_generator();
       this.account_balance = 0;
+      this.password = password;
+      this.username = username;
+      this.customer = customer;
    }
 
 
 
-   public void deposit(){
+   public void deposit(int deposit){
+      account_balance=+deposit;
+      Transactions trans_depo = new Transactions(deposit, "Deposit");
 
    }
    public void withdraw(){
@@ -46,4 +51,18 @@ public class Account {
    public void setAccount_balance(int account_balance) {
       this.account_balance = account_balance;
    }
+
+   public String getPassword() {
+      return password;
+   }
+
+   public String getUsername() {
+      return username;
+   }
+
+   public int getAccount_nr() {
+      return account_nr;
+   }
+
+
 }
