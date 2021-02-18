@@ -15,12 +15,21 @@ public class Bank {
     // har dem alle i araylister.
     ArrayList<Integer> list_acc_nr = new ArrayList<Integer>();//account nr
     ArrayList<Integer> list = new ArrayList<Integer>();//customer ID
-
     Scanner input = new Scanner(System.in);
 
-    public void addtolist ( int account_nr){
-        list_acc_nr.add(account_nr);
+    public void search_by_acc_nr(int acc_nr){
+
+        for (int i = 0; i < list_accounts.size(); i++) {
+            if(list_accounts.get(i).getAccount_nr() == acc_nr)
+            {
+               Account d = list_accounts.get(i);
+            }
+        }
+
+
     }
+
+
 
     public void welcomescreen () {
         System.out.println("Welcome to CPH Bank\n" + "Press (1) to login, if u are an existing customer\n" +
@@ -47,18 +56,39 @@ public class Bank {
 
         int num = input.nextInt();
         switch (num) {
-            case 1:
+            case 1://login
                 System.out.println("Enter username:");
                 String u_name = input.nextLine();
                 String theGreaterSwallower = input.nextLine();
                 System.out.println("Enter password:");
                 String pass = input.nextLine();
                 loginwelcome();
-                break;
+                int num2 = input.nextInt();
+                switch (num2){
+                    //deposit
+                    case 1:
+                        System.out.println("how much would you like to deposit: ");
+                        int depo_amount = input.nextInt();
+                        break;
+
+
+                    case 2:
+                        System.out.println("how much would you like to withdraw: ");
+                        int withD_amount = input.nextInt();
+                        break;
+                    case 3:
+                        System.out.println("how much would you like to deposit: ");
+                        int trans_amount = input.nextInt();
+                        break;
+                    case 4:
+                        System.out.println("account history:");
+                        break;
+                }
+break;
 
 
 
-            case 2://create an account for customer
+            case 2://create an account
                 System.out.println("Enter first name:");
                 String name = input.nextLine();
                 theGreaterSwallower = input.nextLine();
@@ -73,7 +103,7 @@ public class Bank {
                 list_accounts.add(account);
                 System.out.println("account created\n" +
                         "password: " + account.getPassword() + "\nusername: " + account.getUsername() +
-                        "\nacount nr: " + account.getAccount_nr());
+                        "\nacount nr: " + account.getAccount_nr()+"\n");
                 mainprogram();
                 break;
 

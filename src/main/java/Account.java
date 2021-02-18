@@ -4,12 +4,12 @@ import java.util.Random;
 public class Account {
 
 
-   private int account_nr;
-   private int account_balance;
-   private String password;
-   private String username;
-   private Customer customer;
-   Bank thebankos = new Bank();
+   public int account_nr;
+   public int account_balance;
+   public String password;
+   public String username;
+   public Customer customer;
+   Bank thebankos;
 
 
 
@@ -19,6 +19,7 @@ public class Account {
       this.password = password;
       this.username = username;
       this.customer = customer;
+      this.thebankos = new Bank();
    }
 
 
@@ -36,11 +37,9 @@ public class Account {
 
    }
 
-   private int account_nr_generator(){
+   public int account_nr_generator(){
          Random rd = new Random();
-         Integer rn = rd.nextInt(10000)+1;
-         if(!thebankos.list_acc_nr.contains(rn)){
-         thebankos.addtolist(rn); }
+         int rn = rd.nextInt(10000)+1;
          return rn;
    }
 
@@ -64,5 +63,6 @@ public class Account {
       return account_nr;
    }
 
-
 }
+
+
